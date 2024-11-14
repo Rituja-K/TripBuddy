@@ -21,6 +21,8 @@
         position: relative;
         width: 100.0%;
         height: 100.0%;
+
+    
         left: 0.0%;
         top: 0.0%;
         }
@@ -432,3 +434,196 @@
         );
         
 </script>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fresher Training Registration</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #444;
+        }
+
+        /* Container for all content */
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding-top: 50px;
+        }
+
+        /* Form styles */
+        .form-container {
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+
+        .form-container input, .form-container select, .form-container textarea {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+
+        /* Success message */
+        .success-message {
+            display: none;
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        footer a {
+            color: #ff6f61;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+
+            .form-container {
+                padding: 20px;
+            }
+
+            .form-container button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- Header Section -->
+        <header>
+            <h1>Fresher Training Registration</h1>
+            <p>Register now to kickstart your career!</p>
+        </header>
+
+        <!-- Registration Form Section -->
+        <div class="form-container">
+            <h2>Register for the Training Program</h2>
+
+            <!-- Fresher Training Registration Form -->
+            <form id="registrationForm" onsubmit="return validateForm()">
+                <!-- Personal Information Section -->
+                <label for="fullName">Full Name:</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+
+                <!-- Training Preferences Section -->
+                <label for="course">Select Training Course:</label>
+                <select id="course" name="course" required>
+                    <option value="">--Select Course--</option>
+                    <option value="Web Development">Web Development</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Cloud Computing">Cloud Computing</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="AI">Artificial Intelligence</option>
+                </select>
+
+                <label for="experience">Do you have any prior experience? (Optional)</label>
+                <textarea id="experience" name="experience" placeholder="Describe any relevant experience" rows="4"></textarea>
+
+                <button type="submit">Submit Registration</button>
+            </form>
+
+            <!-- Success Message -->
+            <div class="success-message" id="successMessage">
+                <p>Thank you for registering! We will get back to you soon.</p>
+            </div>
+        </div>
+
+        <!-- Footer Section -->
+        <footer>
+            <p>&copy; 2024 Fresher Training Program | All Rights Reserved</p>
+            <p>Visit our <a href="https://www.example.com" target="_blank">Privacy Policy</a></p>
+        </footer>
+
+    </div>
+
+    <script>
+        // Form Validation Function
+        function validateForm() {
+            var fullName = document.getElementById("fullName").value;
+            var email = document.getElementById("email").value;
+            var phone = document.getElementById("phone").value;
+            var course = document.getElementById("course").value;
+
+            // Validate required fields
+            if (fullName === "" || email === "" || phone === "" || course === "") {
+                alert("All required fields must be filled out!");
+                return false;
+            }
+
+            // If validation passes, show success message
+            document.getElementById("successMessage").style.display = "block";
+            // Optionally clear the form
+            document.getElementById("registrationForm").reset();
+            return false;  // Prevent form submission to demonstrate success message
+        }
+    </script>
+
+</body>
+
+</html>
